@@ -1,0 +1,3 @@
+### 禁止SVN用户通过ssh登陆svn服务器
+在.ssh/authorized_keys开头增加
+n-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty防止用户登录

@@ -1,0 +1,18 @@
+（1）首先需要将需要继续使用svn的系统用户家目录进行压缩
+cd /home
+
+tar -zcf lizhentest.tgz /svn_repo_user_bak
+tar -zcf wangwu.tgz /svn_repo_user_bak
+
+（2）将装有svn仓库的目录也一并压缩，与用户家目录压缩包一起下载备用
+cd /svn_repo
+tar -zcf tr-1.tgz /svn_repo_bak
+tar -zcf tr-2.tgz /svn_repo_bak
+
+（3）在新的服务器上面安装subversion软件
+
+（4）将从原服务器下载的用户家目录压缩包上传到新的svn服务器/home目录下
+
+（5）添加与家目录名称相同的用户：useradd xxxxxxx
+
+（6）恢复用户组配置

@@ -1,0 +1,10 @@
+### 配置svn仓库
+
+# 创建一个文件夹svn，在该文件夹下使用svnadmin命令创建一个仓库myrepo
+mkdir /usr/local/svn
+svnadmin create /usr/local/svn/myrepo
+
+#设置myrepo目录权限
+chown -R root:svn /usr/local/svn/myrepo
+chmod -R g+w /usr/local/svn/myrepo
+chmod -R o-rwx /usr/local/svn/myrepo

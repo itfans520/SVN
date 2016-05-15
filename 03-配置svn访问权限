@@ -1,0 +1,26 @@
+### 配置svn访问权限
+
+# 进入repo的conf目录
+cd /usr/local/svn/myrepo/conf
+
+# 编辑这个repo的conf文件
+vim svnserve.conf
+
+将anon-access = read 变成anon-access = none
+并把auth-access = write 与 authz-db=authz 前面的注释取消
+
+### 添加访问SVN的用户
+vi authz，在最后添加
+[/]
+lizhentest = rw		#lizhentest 这个用户可以操作svn上面所有的项目
+
+[/tr-1]
+lizhentest = r		#表示lizhentest这个用户对/svn_repo/tr-1仅有读的权限，没有写的权限。
+
+### 本地用户将 用户名 及 密码 写到 passwd 文件中
+
+### 以 在authz中 通过配置权限组的方式，管理用户权限，更简单方便
+
+yunwei = lizhen,zhangsan,lisi,wangwu,zhaoliu
+[/tr-2]
+@yunwei = rw

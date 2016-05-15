@@ -1,0 +1,19 @@
+### SVN 安装
+ yum install openssh-server subversion -y
+ 
+### 添加访问SVN的用户
+（1）添加一个svn用户组，所有使用svn的linux系统账号都归属与该用户组
+groupadd svn
+
+（2）添加一个系统用户
+useradd lizhentest
+
+（3）切换到lizhentest用户使用ssh-keygen命令生成一对密钥
+su - lizhentest
+ssh-keygen -t rsa
+
+（4）配置lizhentest用户通过ssh密钥登录
+（5）将lizhentest用户添加到svn用户组
+usermod -a -G svn lizhentest
+查看添加效果： groups lizhentest
+
